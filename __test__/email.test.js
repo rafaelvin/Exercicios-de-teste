@@ -6,7 +6,8 @@ const valida_tamanho_dominio = a.valida_tamanho_dominio;
 
 describe('Verifica e-mail', () => {
     test('Testa saída da função que separa usuário e domínio', () => {
-        expect(separa_email("nome@email.com")).toStrictEqual(["nome", "email"]);
+        expect(separa_email("nome@email.com")).toStrictEqual(["nome", "email.com"]);
+        expect(separa_email("nomedominio.com")).toBe("E-mail inválido: não possui @");
     }),
     test('Testa função tamanho usuário', () => {
         expect(valida_tamanho_usuario('rafael')).toBe('Usuário válido');
