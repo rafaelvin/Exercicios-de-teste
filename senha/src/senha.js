@@ -42,12 +42,25 @@ function procura_especial(senha){
     return false;
 }
 
-console.log(procura_especial("senha§"))
+function procura_numero(senha){
+    const numeros = "0123456789";
+    for (i = 0; i<senha.length;i++) {
+        for(j=0;j<numeros.length;j++){
+            if(senha[i] == numeros[j]){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+console.log(procura_numero("senha"))
 
 
 module.exports = {
     verifica_tamanho,
     procura_maiuscula,
     procura_minuscula,
-    procura_especial
+    procura_especial,
+    procura_numero
 }

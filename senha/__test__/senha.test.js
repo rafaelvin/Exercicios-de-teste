@@ -3,6 +3,7 @@ const verifica_tamanho = b.verifica_tamanho;
 const procura_maiuscula = b.procura_maiuscula;
 const procura_minuscula = b.procura_minuscula;
 const procura_especial = b.procura_especial;
+const procura_numero = b.procura_numero;
 
 describe('Verifica e-mail', () => {
     
@@ -21,5 +22,9 @@ describe('Verifica e-mail', () => {
     test('Testa função procura_especial', () => {
         expect(procura_especial("senha")).toBe(false);
         expect(procura_especial("senha#")).toBe(true);
+    })
+    test('Testa função procura_numero', () => {
+        expect(procura_numero("senha")).toBe(false);
+        expect(procura_numero("senha2")).toBe(true);
     })
 })
