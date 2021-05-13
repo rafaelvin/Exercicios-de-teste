@@ -6,7 +6,22 @@ function verifica_tamanho(senha) {
     }
 }
 
+function procura_maiuscula(senha){
+    const maiusculas = "ABCDEFGHIJKLMNOPQRSTUVXZ"
+    for (i = 0; i<senha.length;i++) {
+        for(j=0;j<maiusculas.length;j++){
+            if(senha[i] == maiusculas[j]){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+console.log(procura_maiuscula("senha"))
+
 
 module.exports = {
-    verifica_tamanho
+    verifica_tamanho,
+    procura_maiuscula
 }
