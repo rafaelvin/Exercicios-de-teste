@@ -7,7 +7,7 @@ function verifica_tamanho(senha) {
 }
 
 function procura_maiuscula(senha){
-    const maiusculas = "ABCDEFGHIJKLMNOPQRSTUVXZ"
+    const maiusculas = "ABCDEFGHIJKLMNOPQRSTUVXZ";
     for (i = 0; i<senha.length;i++) {
         for(j=0;j<maiusculas.length;j++){
             if(senha[i] == maiusculas[j]){
@@ -19,7 +19,7 @@ function procura_maiuscula(senha){
 }
 
 function procura_minuscula(senha){
-    const minusculas = "abcdefghijklmnopqrstuvxz"
+    const minusculas = "abcdefghijklmnopqrstuvxz";
     for (i = 0; i<senha.length;i++) {
         for(j=0;j<minusculas.length;j++){
             if(senha[i] == minusculas[j]){
@@ -30,11 +30,24 @@ function procura_minuscula(senha){
     return false;
 }
 
-console.log(procura_minuscula("SENHA"))
+function procura_especial(senha){
+    const especiais = "!@#$%¨&*()_+-=¹²³£¢¬§{}[]:;.,<>|*ªº?";
+    for (i = 0; i<senha.length;i++) {
+        for(j=0;j<especiais.length;j++){
+            if(senha[i] == especiais[j]){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+console.log(procura_especial("senha§"))
 
 
 module.exports = {
     verifica_tamanho,
     procura_maiuscula,
-    procura_minuscula
+    procura_minuscula,
+    procura_especial
 }
