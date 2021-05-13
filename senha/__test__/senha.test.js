@@ -1,6 +1,7 @@
 const b = require('../src/senha');
 const verifica_tamanho = b.verifica_tamanho;
 const procura_maiuscula = b.procura_maiuscula;
+const procura_minuscula = b.procura_minuscula;
 
 describe('Verifica e-mail', () => {
     
@@ -11,5 +12,9 @@ describe('Verifica e-mail', () => {
     test('Testa função procura_maiuscula', () => {
         expect(procura_maiuscula("senha")).toBe(false);
         expect(procura_maiuscula("seNha")).toBe(true);
+    })
+    test('Testa função procura_minuscula', () => {
+        expect(procura_minuscula("SENHA")).toBe(false);
+        expect(procura_minuscula("SENHa")).toBe(true);
     })
 })

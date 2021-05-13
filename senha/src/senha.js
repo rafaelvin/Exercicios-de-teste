@@ -18,10 +18,23 @@ function procura_maiuscula(senha){
     return false;
 }
 
-console.log(procura_maiuscula("senha"))
+function procura_minuscula(senha){
+    const minusculas = "abcdefghijklmnopqrstuvxz"
+    for (i = 0; i<senha.length;i++) {
+        for(j=0;j<minusculas.length;j++){
+            if(senha[i] == minusculas[j]){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+console.log(procura_minuscula("SENHA"))
 
 
 module.exports = {
     verifica_tamanho,
-    procura_maiuscula
+    procura_maiuscula,
+    procura_minuscula
 }
