@@ -4,6 +4,8 @@ const procura_maiuscula = b.procura_maiuscula;
 const procura_minuscula = b.procura_minuscula;
 const procura_especial = b.procura_especial;
 const procura_numero = b.procura_numero;
+const procura_acento = b.procura_acento;
+const procura_espaco = b.procura_espaco;
 
 describe('Verifica e-mail', () => {
     
@@ -26,5 +28,13 @@ describe('Verifica e-mail', () => {
     test('Testa função procura_numero', () => {
         expect(procura_numero("senha")).toBe(false);
         expect(procura_numero("senha2")).toBe(true);
+    })
+    test('Testa função procura_acento', () => {
+        expect(procura_acento("senhañ")).toBe(false);
+        expect(procura_acento("senha2")).toBe(true);
+    })
+    test('Testa função procura_espaco', () => {
+        expect(procura_espaco("senha ")).toBe(false);
+        expect(procura_espaco("senha")).toBe(true);
     })
 })

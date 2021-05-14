@@ -54,13 +54,35 @@ function procura_numero(senha){
     return false;
 }
 
-console.log(procura_numero("senha"))
+function procura_acento(senha){
+    const acentuados = "ÀÁÂÃàáâãÈÉÊèéêÌÍÎìíîÒÓÔÕòóôõÙÚÛùúûÑñç";
+    for (i = 0; i<senha.length;i++) {
+        for(j=0;j<acentuados.length;j++){
+            if(senha[i] == acentuados[j]){
+                return false;
+            }
+        }
+    }
+    return true;
+}
 
+function procura_espaco(senha){
+    const espaco = " ";
+    for (i = 0; i<senha.length;i++) {
+        if(senha[i] == espaco){
+            return false;
+        }
+        
+    }
+    return true;
+}
 
 module.exports = {
     verifica_tamanho,
     procura_maiuscula,
     procura_minuscula,
     procura_especial,
-    procura_numero
+    procura_numero,
+    procura_acento,
+    procura_espaco
 }
