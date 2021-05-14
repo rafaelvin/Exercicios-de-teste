@@ -77,6 +77,28 @@ function procura_espaco(senha){
     return true;
 }
 
+function verifica_senha(senha) {
+    if(verifica_tamanho(senha) == false) {
+        return "Senha inválida";
+    } else if(procura_maiuscula(senha) == false){
+        return "Senha inválida";
+    } else if(procura_minuscula(senha) == false){
+        return "Senha inválida";
+    } else if(procura_especial(senha) == false){
+        return "Senha inválida";
+    } else if(procura_numero(senha) == false){
+        return "Senha inválida";
+    } else if(procura_acento(senha) == false){
+        return "Senha inválida";
+    } else if(procura_espaco(senha) == false){
+        return "Senha inválida";
+    } else{
+        return "Senha válida";
+    }
+}
+
+console.log(verifica_senha("Senh@123"));
+
 module.exports = {
     verifica_tamanho,
     procura_maiuscula,
@@ -84,5 +106,6 @@ module.exports = {
     procura_especial,
     procura_numero,
     procura_acento,
-    procura_espaco
+    procura_espaco,
+    verifica_senha
 }

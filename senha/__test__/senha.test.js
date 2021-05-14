@@ -6,6 +6,7 @@ const procura_especial = b.procura_especial;
 const procura_numero = b.procura_numero;
 const procura_acento = b.procura_acento;
 const procura_espaco = b.procura_espaco;
+const verifica_senha = b.verifica_senha;
 
 describe('Verifica e-mail', () => {
     
@@ -36,5 +37,9 @@ describe('Verifica e-mail', () => {
     test('Testa função procura_espaco', () => {
         expect(procura_espaco("senha ")).toBe(false);
         expect(procura_espaco("senha")).toBe(true);
+    })
+    test('Testa função verifica_senha', () => {
+        expect(verifica_senha("Senha123")).toBe("Senha inválida");
+        expect(verifica_senha("Senh@123")).toBe("Senha válida");
     })
 })
