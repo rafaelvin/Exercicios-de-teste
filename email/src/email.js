@@ -11,13 +11,10 @@ function testa_email(email) {
             tamanho_dominio = valida_tamanho_dominio(array_email[1]);
             if(tamanho_dominio == false) {
                 return "E-mail inválido";
+            } else if(verifica_caracteres(email) == false) {
+                return "E-mail inválido";
             } else {
-                verif_caracteres = verifica_caracteres(email);
-                if(verif_caracteres == false) {
-                    return "E-mail inválido";
-                } else {
-                    return "E-mail válido";
-                }
+                return "E-mail válido";
             }
         }
     }   
@@ -56,7 +53,7 @@ function verifica_caracteres(email) {
 
 
 
-console.log(testa_email("nome@ em.br"))
+console.log(testa_email("nome@email.br"))
 
 
 module.exports = {
